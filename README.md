@@ -1,9 +1,9 @@
-# 📡 SPI Slave Verification Environment (SystemVerilog + UVM)
+# 📡 SPI Slave Verification Environment (SystemVerilog)
 
 ![SPI Slave SV Verification Environment](sv_env.png)
 
 ## 📖 Overview
-This project implements a **SystemVerilog/UVM verification environment** for a custom SPI Slave design.  
+This project implements a **SystemVerilog verification environment** for a custom SPI Slave design.  
 The environment validates the DUT (Device Under Test) using **transaction classes, randomized stimulus, coverage, scoreboards, assertions, and a golden reference model**.  
 
 It demonstrates both **traditional SystemVerilog testbench architecture** and **UVM methodology**, making it a complete verification showcase.
@@ -69,28 +69,6 @@ The SPI Slave (`SLAVE`) module connects via `slave_if` interface:
 ### 7. **Golden Model**
 - Behavioral model of SPI Slave.  
 - Provides expected outputs for scoreboard comparison.  
-
-### 8. **UVM Integration**
-- UVM test (`slave_test`) configured via `uvm_config_db`.  
-- Interface passed to UVM environment.  
-- `run_test("slave_test")` executes UVM testbench.  
-
----
-
-## ▶️ Simulation Instructions
-1. Compile with QuestaSim/ModelSim:
-   ```tcl
-   vlog +define+SIM *.sv
-   vsim top
-   run -all
-   ```
-2. For UVM test:
-   ```tcl
-   vsim top -uvm
-   run -all
-   ```
-3. Check assertion results in transcript.  
-4. Generate coverage reports to confirm functional and assertion coverage.  
 
 ---
 
